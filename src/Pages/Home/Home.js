@@ -21,7 +21,7 @@ function Home() {
 	const categories = useSelector(state => state.netflixAuth.category)
 	const items = useSelector(state => state.netflixAuth.items)
 	const authData = useSelector(state => state.netflixAuth.authData)
-	const likeVideos = items.filter(item => item.likes.includes(authData.user._id))
+	const likeVideos = items?.filter(item => item.likes.includes(authData.user._id))
 
 
 	
@@ -40,7 +40,7 @@ function Home() {
 	},[model])
 	const searchHandler = (e) => {
 		setQuery(e)
-		setSearchItems(items.filter(item => item.name.toLowerCase().includes(e.toLowerCase())))
+		setSearchItems(items?.filter(item => item.name.toLowerCase().includes(e.toLowerCase())))
 	}
 
 	useEffect(() => {},[query])

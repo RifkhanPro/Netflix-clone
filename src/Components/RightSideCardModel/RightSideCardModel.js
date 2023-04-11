@@ -20,7 +20,7 @@ const RightSideCardModel = ({model,setModel}) => {
 		dispatch(netflixAuthActions.autoLogin())
 	  },[])
 
-	const likeVideos = items.filter(item => item.likes.includes(authData.user._id))
+	const likeVideos = items?.filter(item => item.likes.includes(authData?.user._id))
 
   return <>
 		<div 
@@ -33,7 +33,7 @@ const RightSideCardModel = ({model,setModel}) => {
 					onClick={() => setModel(current => !current)}
 				/>
 				<div  className={model ? 'netflix-like-model-list-open' : 'netflix-like-model-list-close'}>
-						{likeVideos.map(item => <CardListItem  key={item._id} item={item} setModel={setModel} />)}
+						{likeVideos?.map(item => <CardListItem  key={item._id} item={item} setModel={setModel} />)}
 				</div>
 		</div>
   </>;
