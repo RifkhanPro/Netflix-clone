@@ -31,7 +31,7 @@ export default function Topbar({setModel,setSearchItems}) {
 	const series = items?.filter(item => item.type === 'series')
 
   const authData = useSelector(state => state.netflixAuth.authData)
-  const likeVideos = items.filter(item => item.likes.includes(authData.user._id))
+  const likeVideos = items?.filter(item => item.likes.includes(authData.user._id))
 
 
 
