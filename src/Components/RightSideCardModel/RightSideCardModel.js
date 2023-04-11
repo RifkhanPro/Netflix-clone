@@ -20,7 +20,7 @@ const RightSideCardModel = ({model,setModel}) => {
 		dispatch(netflixAuthActions.autoLogin())
 	  },[])
 
-	const likeVideos = items?.filter(item => item.likes.includes(authData?.user._id))
+	const likeVideos = items?.filter(item => item.likes.includes(authData?.user?._id))
 
   return <>
 		<div 
