@@ -14,7 +14,7 @@ const MovieItem = () => {
 	const isAuthenticated = useSelector(state => state.netflixAuth.isAuthenticated)
 	const user = useSelector(state => state.netflixAuth.authData)
 	const items = useSelector(state => state.netflixAuth.items)
-	const item = items.find(item => item._id === id)
+	const item = items?.find(item => item._id === id)
 	const [feedback,setFeedback] = useState({
 											like:item?.likes?.includes(user?.user._id),
 											dislike:item?.dislikes?.includes(user?.user._id),
@@ -25,7 +25,7 @@ const MovieItem = () => {
 
 	
 	useEffect(() => {
-		dispatch(netflixAuthActions.autoLogin())
+		dispatch(netflixAuthActions?.autoLogin())
 	  },[dispatch])
 
 	  useEffect(() => {
@@ -35,26 +35,26 @@ const MovieItem = () => {
 	const handleClick = (e) => {
 		if(e === 'like'){
 			setFeedback({...feedback,like:true,dislike:false})
-			dispatch(likeItem({id:id,userId:user.user._id}))
+			dispatch(likeItem({id:id,userId:user?.user?._id}))
 		}
 		else if(e === 'dislike'){
 			setFeedback({...feedback,like:false,dislike:true})
 
-			dispatch(dislikeItem({id:id,userId:user.user._id}))
+			dispatch(dislikeItem({id:id,userId:user?.user?._id}))
 
 		}
 		else if(e === 'share'){
-			setFeedback({...feedback,share:!feedback.share})
+			setFeedback({...feedback,share:!feedback?.share})
 
 		}
 		else if(e === 'save'){
 			setFeedback({...feedback,save:!feedback.save})
-			dispatch(saveItem({id:id,userId:user.user._id}))
+			dispatch(saveItem({id:id,userId:user?.user?._id}))
 
 		}
 		else if(e === 'downloads'){
 			setFeedback({...feedback,downloads:!feedback.downloads})
-			dispatch(downloadItem({id:id,userId:user.user._id}))
+			dispatch(downloadItem({id:id,userId:user?.user?._id}))
 
 		}
 	}
