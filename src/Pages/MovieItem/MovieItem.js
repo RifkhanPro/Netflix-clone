@@ -16,11 +16,11 @@ const MovieItem = () => {
 	const items = useSelector(state => state.netflixAuth.items)
 	const item = items?.find(item => item._id === id)
 	const [feedback,setFeedback] = useState({
-											like:item?.likes?.includes(user?.user._id),
-											dislike:item?.dislikes?.includes(user?.user._id),
-											share:item?.share?.includes(user?.user._id),
-											save:item?.save?.includes(user?.user._id),
-											downloads:item?.downloads?.includes(user?.user._id),
+											like:item?.likes?.includes(user?.user?._id),
+											dislike:item?.dislikes?.includes(user?.user?._id),
+											share:item?.share?.includes(user?.user?._id),
+											save:item?.save?.includes(user?.user?._id),
+											downloads:item?.downloads?.includes(user?.user?._id),
 										})
 
 	
