@@ -3,7 +3,7 @@ import { postActions } from './postSlice'
 export const fetchPosts = () => {
 	return async dispatch => {
 		const fetchPosts = async () => {
-			const response = await fetch('http://44.226.145.213:5000/post')
+			const response = await fetch('http://localhost:5000/post')
 
 			if (!response.ok) {
 				throw new Error('Could not fetch Data')
@@ -25,7 +25,7 @@ export const fetchPosts = () => {
 export const addPost = postData => {
 	return async dispatch => {
 		const addPost = async () => {
-			const response = await fetch('http://44.226.145.213:5000/post', {
+			const response = await fetch('http://localhost:5000/post', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
