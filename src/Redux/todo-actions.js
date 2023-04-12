@@ -3,7 +3,7 @@ import { todoAction } from './TodoSlice'
 export const fetchTodoLists = () => {
 	return async dispatch => {
 		const fetchList = async () => {
-			const response = await fetch('http://localhost:5000/todo')
+			const response = await fetch('http://44.226.145.213:5000/todo')
 
 			if (!response.ok) {
 				throw new Error('Could not fetch Data')
@@ -26,7 +26,7 @@ export const addTodo = todoData => {
 	console.log(todoData)
 	return async dispatch => {
 		const addTodo = async () => {
-			const response = await fetch('http://localhost:5000/todo', {
+			const response = await fetch('http://44.226.145.213:5000/todo', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
@@ -55,7 +55,7 @@ export const addTodo = todoData => {
 export const deleteTodo = id => {
 	return async dispatch => {
 		const todo = async () => {
-			const response = await fetch(`http://localhost:5000/todo/${id}`, {
+			const response = await fetch(`http://44.226.145.213:5000/todo/${id}`, {
 				method: 'DELETE'
 			})
 
@@ -81,7 +81,7 @@ export const deleteTodo = id => {
 export const viewTodo = id => {
 	return async dispatch => {
 		const viewTodo = async () => {
-			const response = await fetch(`http://localhost:5000/todo/${id}`)
+			const response = await fetch(`http://44.226.145.213:5000/todo/${id}`)
 
 			if (!response.ok) {
 				throw new Error('Could not fetch Data')
@@ -104,7 +104,7 @@ export const viewTodo = id => {
 export const editTodo = id => {
 	return async dispatch => {
 		const todo = async () => {
-			const response = await fetch(`http://localhost:5000/todo/${id}`)
+			const response = await fetch(`http://44.226.145.213:5000/todo/${id}`)
 
 			if (!response.ok) {
 				throw new Error('Could not fetch Data')
