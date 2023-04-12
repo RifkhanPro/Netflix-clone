@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const API = axios.create({ baseURL: 'http://localhost:5000/' });
+const API = axios.create({ baseURL: 'http://44.226.145.213:5000/' })
 
 // export const getUser = (userId) => API.get(`user/${userId}`);
 
-export const updateUser = (id, formData) => API.put(`user/${id}`, formData);
+export const updateUser = (id, formData) => API.put(`user/${id}`, formData)
 
 // export const getAllUser = () => API.get('user');
 
@@ -23,24 +23,27 @@ export const updateUser = (id, formData) => API.put(`user/${id}`, formData);
 // export const getAllInterestDetails = (id) => API.get(`user/${id}/interest`);
 
 // add into card api
-export const getAuthData = (uid) => API.get(`user/${uid}`);
+export const getAuthData = uid => API.get(`user/${uid}`)
 
 // get user data
-export const getUserData = (token) => API.get(`user/userData/${token}`);
+export const getUserData = token => API.get(`user/userData/${token}`)
 
 // add into card api
-export const addToCard = (uid,pid) => API.get(`user/card/${uid}/${pid}`);
+export const addToCard = (uid, pid) => API.get(`user/card/${uid}/${pid}`)
 //increase card item
-export const increaseCardItem = (uid,pid) => API.put(`user/increase/${uid}/${pid}`);
+export const increaseCardItem = (uid, pid) =>
+	API.put(`user/increase/${uid}/${pid}`)
 
 //decrease card item
-export const decreaseCardItem = (uid,pid) => API.put(`user/decrease/${uid}/${pid}`);
+export const decreaseCardItem = (uid, pid) =>
+	API.put(`user/decrease/${uid}/${pid}`)
 
 //get wish list
-export const getWishList = (uid) => API.get(`product/wish/${uid}`);
+export const getWishList = uid => API.get(`product/wish/${uid}`)
 
 //get wish list
-export const getCardList = (uid) => API.get(`user/card/${uid}`);
+export const getCardList = uid => API.get(`user/card/${uid}`)
 
 //upload photo
-export const uploadProfilePhoto = (uid,formData) => API.put(`user/uploadPhoto/${uid}`,formData);
+export const uploadProfilePhoto = (uid, formData) =>
+	API.put(`user/uploadPhoto/${uid}`, formData)
